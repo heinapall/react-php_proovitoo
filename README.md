@@ -85,6 +85,12 @@ npm start
 
 The application will automatically open in your browser at: `http://localhost:3000`
 
+### Running Tests
+To verify the anagram logic, navigate to the backend folder and run:
+```bash
+php bin/phpunit
+```
+
 ## Usage & Documentation
 
 ### API Documentation
