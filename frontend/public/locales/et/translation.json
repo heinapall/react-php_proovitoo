@@ -1,0 +1,24 @@
+{
+  "header": {
+    "api_docs": "API Doc"
+  },
+  "hero": {
+    "title": "Kuidas saame aidata?"
+  },
+  "search": {
+    "card_title": "Leia anagramme",
+    "description": "Sisesta sõna, et leida kõik vastavad anagrammid.",
+    "placeholder": "Sisesta sõna (nt. palk)",
+    "button": "Otsi anagramme",
+    "results_label": "Tulemused sõnale:",
+    "no_results": "Anagramme ei leitud.",
+    "word_not_found": "Sõna \"{{word}}\" ei ole meie andmebaasis."
+  },
+  "import": {
+    "card_title": "Impordi andmebaas",
+    "description": "Alustage sõnade leidmist, importides andmed välisest URL-ist.",
+    "placeholder": "Kleebi URL siia...",
+    "button": "Käivita import",
+    "processing": "Töötlemine..."
+  }
+}

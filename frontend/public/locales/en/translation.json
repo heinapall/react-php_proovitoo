@@ -1,0 +1,24 @@
+{
+  "header": {
+    "api_docs": "API Docs"
+  },
+  "hero": {
+    "title": "How can we help?"
+  },
+  "search": {
+    "card_title": "Find Anagrams",
+    "description": "Enter a word to instantly locate all valid anagrams.",
+    "placeholder": "Enter word (e.g. palk)",
+    "button": "Search Anagrams",
+    "results_label": "Results for:",
+    "no_results": "No anagrams found.",
+    "word_not_found": "The word \"{{word}}\" is not in our database."
+  },
+  "import": {
+    "card_title": "Import Database",
+    "description": "Initialize your system by importing data from a URL.",
+    "placeholder": "Paste URL here...",
+    "button": "Run Import Tool",
+    "processing": "Processing..."
+  }
+}
