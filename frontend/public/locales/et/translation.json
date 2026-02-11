@@ -1,6 +1,6 @@
 {
   "header": {
-    "api_docs": "API Doc"
+    "api_docs": "API Dok"
   },
   "hero": {
     "title": "Kuidas saame aidata?"
@@ -19,6 +19,17 @@
     "description": "Alustage sõnade leidmist, importides andmed välisest URL-ist.",
     "placeholder": "Kleebi URL siia...",
     "button": "Käivita import",
-    "processing": "Töötlemine..."
+    "processing": "Töötlemine...",
+    "success": "Tehtud! Sisestati {{count}} sõna."
+  },
+  "errors": {
+    "connection": "Viga: Ei saanud serveriga ühendust.",
+    "prefix": "Viga: ",
+    "IMPORT_FAILED": "Import ebaõnnestus",
+    "MISSING_URL": "URL on puudu.",
+    "INVALID_SCHEME": "Vigane URL! Palun lisa 'https://' aadressi ette.",
+    "REMOTE_ERROR": "Server andis veateate (404 või 500). Kontrolli linki.",
+    "FILE_EMPTY": "Fail on tühi.",
+    "INVALID_CONTENT_TYPE": "See ei ole tekstifail! Palun kasuta .txt linki."
   }
 }

@@ -19,6 +19,17 @@
     "description": "Initialize your system by importing data from a URL.",
     "placeholder": "Paste URL here...",
     "button": "Run Import Tool",
-    "processing": "Processing..."
+    "processing": "Processing...",
+    "success": "Success! Imported {{count}} words."
+  },
+"errors": {
+    "connection": "Error: Could not connect to backend.",
+    "prefix": "Error: ",
+    "IMPORT_FAILED": "Import failed",
+    "MISSING_URL": "URL is missing.",
+    "INVALID_SCHEME": "Invalid URL! Please add 'https://' to the beginning.",
+    "REMOTE_ERROR": "Remote server returned an error (404 or 500). Check the link.",
+    "FILE_EMPTY": "File is empty.",
+    "INVALID_CONTENT_TYPE": "This is not a text file! Please use a .txt link."
   }
 }

@@ -229,7 +229,7 @@ button {
   transition: opacity 0.2s;
 }
 
-button:hover { text-decoration: underline; opacity: 0.8; }
+button:hover { opacity: 0.8; }
 button::after { content: '→'; margin-left: 8px; font-size: 1.2rem; }
 
 .btn-import { color: #0056b3; }
@@ -362,4 +362,47 @@ input:checked + .slider:before {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.language-switcher {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  background: #f0f2f5;
+  padding: 4px;
+  border-radius: 20px;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  padding: 6px 10px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #888;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.lang-btn.active {
+  background-color: white;
+  color: var(--opus-red);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.lang-btn::after {
+  content: none;
+  display: none;
+}
+
+.btn-import:hover, .btn-search:hover {
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  width: fit-content;
 }

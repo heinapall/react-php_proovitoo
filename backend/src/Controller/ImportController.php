@@ -45,27 +45,45 @@ final class ImportController extends AbstractController
 
         set_time_limit(0);
         ini_set('memory_limit', '-1');
-        
         $em->getConnection()->getConfiguration()->setMiddlewares([]);
 
         $data = json_decode($request->getContent(), true);
         $targetUrl = $data['url'] ?? null;
-
         if (empty($targetUrl)) {
-            return $this->json(['error' => 'No URL provided.'], 400);
+            return $this->json(['error_code' => 'MISSING_URL'], 400);
+        }
+        $targetUrl = str_replace(['http(s)://', 'HTTP(S)://'], 'https://', $targetUrl);
+        if ($targetUrl && !preg_match('/^https?:\/\//', $targetUrl)) {
+            $targetUrl = 'https://' . $targetUrl;
         }
 
         try {
+            if (empty($targetUrl)) {
+                 return $this->json(['error_code' => 'MISSING_URL'], 400);
+            }
             $response = $client->request('GET', $targetUrl);
             if ($response->getStatusCode() !== 200) {
-                throw new \Exception("Remote server returned error " . $response->getStatusCode());
+                 return $this->json(['error_code' => 'REMOTE_ERROR', 'details' => $response->getStatusCode()], 400);
+            }
+            $contentType = $response->getHeaders()['content-type'][0] ?? '';
+            if (str_contains($contentType, 'text/html')) {
+                return $this->json(['error_code' => 'INVALID_CONTENT_TYPE'], 400);
             }
             $content = $response->getContent();
             if (empty($content)) {
-                throw new \Exception("File is empty.");
+                 return $this->json(['error_code' => 'FILE_EMPTY'], 400);
             }
         } catch (\Exception $e) {
-            return $this->json(['error' => 'Import failed: ' . $e->getMessage()], 400);
+            $msg = $e->getMessage();
+            $code = 'IMPORT_FAILED';
+
+            if (str_contains($msg, 'scheme is missing')) {
+                $code = 'INVALID_SCHEME';
+            } 
+            return $this->json([
+                'error' => $msg, 
+                'error_code' => $code
+            ], 400);
         }
 
         $connection = $em->getConnection();
@@ -78,14 +96,10 @@ final class ImportController extends AbstractController
         foreach ($words as $rawWord) {
             $cleanWord = trim($rawWord);
             if (empty($cleanWord)) continue;
-
             $word = new Word();
             $word->setOriginalWord($cleanWord);
-
             $word->setSortedWord($solver->computeSortedKey($cleanWord));
-
             $em->persist($word);
-
             if (($count % $batchSize) === 0) {
                 $em->flush();
                 $em->clear(); 

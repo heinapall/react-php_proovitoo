@@ -1,0 +1,35 @@
+{
+  "header": {
+    "api_docs": "SUOMI API Doc"
+  },
+  "hero": {
+    "title": "SUOMI Kuidas saame aidata?"
+  },
+  "search": {
+    "card_title": "SUOMI Leia anagramme",
+    "description": "SUOMI Sisesta sõna, et leida kõik vastavad anagrammid.",
+    "placeholder": "SUOMI Sisesta sõna (nt. palk)",
+    "button": "SUOMI Otsi anagramme",
+    "results_label": "SUOMI Tulemused sõnale:",
+    "no_results": "SUOMI Anagramme ei leitud.",
+    "word_not_found": "SUOMI Sõna \"{{word}}\" ei ole meie andmebaasis."
+  },
+  "import": {
+    "card_title": "SUOMI Impordi andmebaas",
+    "description": "SUOMI Alustage sõnade leidmist, importides andmed välisest URL-ist.",
+    "placeholder": "SUOMI Kleebi URL siia...",
+    "button": "SUOMI Käivita import",
+    "processing": "SUOMI Töötlemine...",
+    "success": "SUOMI Tehtud! Sisestati {{count}} sõna."
+  },
+  "errors": {
+    "connection": "SUOMI Viga: Ei saanud serveriga ühendust.",
+    "prefix": "SUOMI Viga: ",
+    "IMPORT_FAILED": "SUOMI Import ebaõnnestus",
+    "MISSING_URL": "SUOMI URL on puudu.",
+    "INVALID_SCHEME": "SUOMI Vigane URL! Palun lisa 'https://' aadressi ette.",
+    "REMOTE_ERROR": "SUOMI Server andis veateate (404 või 500). Kontrolli linki.",
+    "FILE_EMPTY": "SUOMI Fail on tühi.",
+    "INVALID_CONTENT_TYPE": "SUOMI See ei ole tekstifail! Palun kasuta .txt linki."
+  }
+}
